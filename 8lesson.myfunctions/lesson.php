@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo "Type casting"; ?></title>
+    <title><?= "PHP Functions" ?></title>
 </head>
 <body>
     <?php 
-        $str = "4.544kakakkaka"; // строка
-        $number = $str + 0.466; // при использовании строки в которой есть число
-        // в арифметической операции она неявно преобразуеться в числовой тип, 
-        // отбросив весь текст, который не являеться числом
-        // При этом при обрезании строки перед преобразованием будет выдано 
-        // предупреждение
+        $user = "John";
+        # isset(var) - проверяет, существует ли переменна (var != NULL)
+        if (isset($user)) {
+            echo "User exist: $user";
+        } else {
+            echo "Error! User doesn't exist";
+        }
+        # empty(var) - проверяет, пустая ли переменная. Переменная пустая, если:
+        # - var == NULL
+        # - var == false
+        # - var == 0
+        # - var == 0.0
+        # - var == "0"
+        # - var == ""
+        # - var == array()
 
-        echo "result" . $number; // так же число преобразовывается в строку
-        // в случае конкатенации
-
-        // Преобразование в логический тип false:
-        # false == NULL
-        # false == 0
-        # false == 0.0
-        # false == "0"
-        # false == ""
-        # false == array()
-
-        // Все остальные значение будут преобразованы в true
-
-        // Так же логические true и false типы преобразовываются в строковые
-        // значения "1" и "0" соответственно
-
-        echo "<br />";
-
-        // Явное приведение:
-        $some_float = 4.56;
-        $some_int = (int) $some_float;
-
-        echo "Result: \$some_int = $some_int";
+        # gettype(val) - возвращает тип передаваемого аргумента, типы:
+        # - integer
+        # - string
+        # - boolean
+        # - double
+        # и тд
     ?>
 </body>
 </html>

@@ -7,7 +7,9 @@
 </head>
 <body>
     <?php
-        if (/*condition*/) {
+        $condition = true;
+
+        if ($condition) {
             # code...
         } else {
             # code...

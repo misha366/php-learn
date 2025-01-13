@@ -10,6 +10,13 @@
 <body>
     <?php
         $arr = [1, 2, 3];
+        for ($i = 0; $i < count($arr); $i++) { // count - возвращает length массива
+            echo $arr[$i] . "<br>";
+        }
+
+        foreach ($arr as $key => $value) {
+            echo "$key => $value" . "<br>";
+        }
     ?>
 </body>
 </html>

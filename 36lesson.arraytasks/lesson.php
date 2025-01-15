@@ -47,7 +47,7 @@
             $array_task_2[$i] = mt_rand(0, 100);
         }
 
-        echo "<pre>";
+        echo "2.1 (before sort): <pre>";
         print_r($array_task_2);
         echo "</pre>";
 
@@ -69,10 +69,43 @@
             }
         }
 
-        echo "<pre>";
+        echo "2.1 (after sort): <pre>";
         print_r($array_task_2);
         echo "</pre>";
 
+        // 2.2
+        $array_task_2_2 = [];
+
+        for ($i = 0; $i < mt_rand(5, 10); $i++) {
+            $array_task_2_2[$i] = mt_rand(0, 100);
+        }
+
+        sort($array_task_2_2);
+
+        echo "2.2: <pre>";
+        print_r($array_task_2_2);
+        echo "</pre>";
+
+        // 3.1
+
+        const FILEPATH = "./file.txt";
+
+        $file = file_exists(FILEPATH) ? file_get_contents(FILEPATH) : "";
+
+        $file_arr = explode("\n", $file);
+
+        echo "3.1: <pre>";
+        print_r($file_arr);
+        echo "</pre>";
+
+        // 3.2
+
+        // ф-я file сразу разбивает весь контент файла на массив по сепаратору "\n"
+        $file_3_2 = file_exists(FILEPATH) ? file(FILEPATH) : "";
+
+        echo "3.2: <pre>";
+        print_r($file_3_2);
+        echo "</pre>";
 
     ?>
 </body>
